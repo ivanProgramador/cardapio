@@ -123,7 +123,7 @@
 
               <button
                 class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                data-name="Hamburguer duplo"
+                data-name="Hamburguer salad"
                 data-price="32.90"
               >
                 <i class="fa fa-cart-plus text-lg text-white"></i>
@@ -163,79 +163,102 @@
         </div>
         <!--fim produto item-->
       </main>
-    </div>
-    <!--FINAL MENU-->
 
-    <div class="mx-auto max-w-7xl px-2 my-2">
-      <h2 class="font-bold text-3xl">Bebidas</h2>
-    </div>
 
-    <!--GRID BEBIDAS -->
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
-      id="menu"
-    >
-      <!--bebida item-->
-      <div class="flex gap-2 w-full">
-        <img
-          src="./assets/refri-1.png"
-          alt="Coca-lata"
-          class="w-28 h-28 rounded-md hover:scale-110 hover:rotate-2 duration-300"
-        />
 
-        <div>
-          <p class="font-bold">Coca-lata</p>
 
-          <div class="flex items-center gap-2 justify-between mt-3">
-            <p class="font-bold text-lg">R$ 6,00</p>
 
-            <button
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2 class="font-bold text-3xl">Bebidas</h2>
+      </div>
+  
+      <!--GRID BEBIDAS -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        id="menu"
+      >
+        <!--bebida item-->
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/refri-1.png"
+            alt="Coca-lata"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:rotate-2 duration-300"
+          />
+  
+          <div>
+            <p class="font-bold">Coca-lata</p>
+  
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 6,00</p>
+  
+              
+              <button
               class="bg-gray-900 px-5 rounded add-to-cart-btn"
               data-name="Coca-lata"
               data-price="6.00"
             >
               <i class="fa fa-cart-plus text-lg text-white"></i>
             </button>
+  
+            
+            </div>
           </div>
         </div>
-      </div>
-      <!--fim bebida item-->
-
-      <!--bebida item-->
-      <div class="flex gap-2 w-full">
-        <img
-          src="./assets/refri-2.png"
-          alt="Guarana-lata"
-          class="w-28 h-28 rounded-md hover:scale-110 hover:rotate-2 duration-300"
-        />
-
-        <div>
-          <p class="font-bold">Guarana-lata</p>
-
-          <div class="flex items-center gap-2 justify-between mt-3">
-            <p class="font-bold text-lg">R$ 6,00</p>
-
-            <button
-              class="bg-gray-900 px-5 rounded add-to-cart-btn"
-              data-name="Guarana-lata"
-              data-price="6.00"
-            >
-              <i class="fa fa-cart-plus text-lg text-white"></i>
-            </button>
+        <!--fim bebida item-->
+  
+        <!--bebida item-->
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/refri-2.png"
+            alt="Guarana-lata"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:rotate-2 duration-300"
+          />
+  
+          <div>
+            <p class="font-bold">Guarana-lata</p>
+  
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$ 6,00</p>
+  
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn"
+                data-name="Guarana-lata"
+                data-price="6.00"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
           </div>
         </div>
+        <!--fim bebida item-->
       </div>
-      <!--fim bebida item-->
+      <!--FIM GRID BEBIDAS -->
+
+
+
+
+
+
+
     </div>
-    <!--FIM GRID BEBIDAS -->
+    <!--FINAL MENU-->
+
+   
 
     <!--Modal cart-->
-     <div class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] flex-center items-center justify-center hidden">
+     <div 
+       id="cart-modal"
+        class="bg-black/50 w-full h-full fixed top-0 left-0 z-[99] flex-center items-center justify-center hidden"
+        
+        >
        <div class="bg-white p-5 rounded-md min-w-[90%] md-min-w[400px]">
 
          <h2 class="text-center font-bold text-2xl mb-2" >Meu carrinho</h2>
 
-         <div id="cart-tems" class="flex justify-between mb-2 flex-col"></div>
+         <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
+
+
          <p class="font-bold">Total:<span id="cart-total">0.00</span></p>
          <p class="font-bold mt-4">Endereço de entrega:</p>
          <input
@@ -247,7 +270,7 @@
          <p class="text-red-500 hidden" id="address-warn" >Digite seu endereço completo!</p>
 
          <div class="flex items-center justify-between mt-5 w-full" >
-            <button class="close-modal-btn">Fechar</button>
+            <button id="close-modal-btn">Fechar</button>
             <button id="checkou-btn" class="bg-green-500 text-white px-4 py-1 rounded" >Finalizar pedido</button>
          </div>
 
@@ -266,6 +289,6 @@
          </button>
       </footer>
     <!--fim Buttom cart footer-->
-
+   <script src="script.js"></script>
   </body>
 </html>
