@@ -116,14 +116,15 @@ function updateCartModal(){
 
       // crio uma div para cada elemento  
       const cartItemElement = document.createElement("div");
+      cartItemElement.classList.add("flex","justify-between","mb-4","flex-col")
 
       //crio um elementos html para conter os dados de acad um dos elementos
       cartItemElement.innerHTML = `
-        <div>
+        <div class="flex items-center justify-between" >
          <div>
-           <p>${item.name}</p>
-           <p>${item.quantity}</p>
-           <p>${item.price}</p>
+           <p class="font-medium" >${item.name}</p>
+           <p>Qtd: ${item.quantity}</p>
+           <p class="font-medium mt-2" >${item.price.toFixed(2)}</p>
          </div>
 
          <div>
@@ -133,9 +134,26 @@ function updateCartModal(){
          </div>
         </div>
       `
+
+      //calculando o total no caso eu estou pegando o vaor do item 
+      // e multiplicando epla quantidade de vezes que el foi pedido 
+      //somando o valor na varivel total 
+
+      
+      total += item.price * item.quantity;
+      
       //e adiciona a div para mostrar os dados 
       cartItemsContainer.appendChild(cartItemElement);
+
+
    })
+
+   cartTotal.textContent = total.toLocaleString("pt-br",{
+      style:"currency",
+      currency:"BRL"
+   });
+
+   
 }
 
 
