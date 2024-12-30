@@ -7,12 +7,15 @@ const cartBtn = document.getElementById("cart-btn");
 const cartModal = document.getElementById("cart-modal");
 const cartItemsContainer = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
+
 const checkOutBtn = document.getElementById("checkout-btn");
 
 const closeModalBtn = document.getElementById("close-modal-btn");
 
 const cartCounter = document.getElementById("cart-count");
+
 const addressInput = document.getElementById("address");
+
 const addressWarn = document.getElementById("address-warn");
 
 let cart = [];
@@ -167,3 +170,24 @@ function removeItemCart(name) {
     updateCartModal();
   }
 }
+
+//checagem de endereço
+
+addressInput.addEventListener("input", function (event) {
+  let inputValue = event.target.value;
+
+  if (inputValue !== "") {
+    addressInput.classList.remove("border-red-500");
+    addressWarn.classList.add("hidden");
+  }
+});
+
+checkOutBtn.addEventListener("click", function () {
+  if (cart.length === 0) return;
+  if (addressInput.value === "") {
+    addressWarn.classList.remove("hidden");
+    addressInput.classList.add("border-red-500");
+
+    return;
+  }
+});
